@@ -1,0 +1,31 @@
+BootStrap: yum
+OSVersion: 8
+MirrorURL: http://dl.rockylinux.org/pub/rocky/%{OSVERSION}/BaseOS/x86_64/os/
+Include: dnf
+
+%post
+
+    sed -i 's/^root:.:/root::/g' /etc/passwd
+
+    dnf -y install basesystem bash chkconfig coreutils cpio cronie crontabs \
+        dhclient dnf e2fsprogs ethtool filesystem findutils fipscheck \
+        fipscheck-lib gawk grep gzip initscripts ipmitool iproute iputils \
+        less libndp net-tools NetworkManager NetworkManager-libnm nfs-utils \
+        openssh-clients openssh-server pam pciutils polkit-libs psmisc \
+        rocky-release rsync rsyslog sed setup shadow-utils strace sudo tar \
+        tzdata util-linux vim-minimal wget which words zlib wget
+
+# Prerequisite OS Libraries https://casadocs.readthedocs.io/en/stable/notebooks/introduction.html#Prerequisite-OS-Libraries
+    dnf -y install ImageMagick
+    dnf -y install xorg-x11-server-Xvf
+    dnf -y install compat-libgfortran-4
+    dnf -y install libns
+    dnf -y install libcanberra-gtk2
+
+    dnf -y install python38-devel
+    dnf -y install openmpi-devel
+    dnf -y install mpich-devel
+
+
+# download and install CASA 6.5.3
+    wget https://casa.nrao.edu/download/distro/casa/release/rhel/casa-6.5.3-28-py3.8.tar.xz
