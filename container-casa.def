@@ -28,7 +28,15 @@ Include: dnf
     wget http://128.0.16.28:9000/casa-6.5.3-28-py3.8.tar.xz
     tar xf casa-6.5.3-28-py3.8.tar.xz
     cd casa-6.5.3-28-py3.8/bin
-    PATH=/casa-6.5.3-28-py3.8/bin:$PATH
 
     pip3 install --upgrade pip
     pip3 install pandas
+
+%environment
+
+    PATH=/casa-6.5.3-28-py3.8/bin:$PATH
+
+    export PATH
+
+%runscript
+    exec casa
