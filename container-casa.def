@@ -30,12 +30,5 @@ Include: dnf
     cd casa-6.5.3-28-py3.8/bin
     PATH=/casa-6.5.3-28-py3.8/bin:$PATH
 
+    pip3 install --upgrade pip
     pip3 install pandas
-
-%environment
-    PATH=/casa-6.5.3-28-py3.8/bin:$PATH
-
-%runscript 
-# to run a casa script provided as an argument:
-# singularity run <container> <script> <args>
-  exec casa -c "$@
