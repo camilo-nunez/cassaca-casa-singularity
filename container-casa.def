@@ -25,7 +25,7 @@ Include: dnf
     dnf -y install python38-devel
 
 # download and install CASA 6.5.3
-    wget http://128.0.16.28:9000/casa-6.5.3-28-py3.8.tar.xz
+    wget https://casa.nrao.edu/download/distro/casa/release/rhel/casa-6.5.3-28-py3.8.tar.xz
     tar xf casa-6.5.3-28-py3.8.tar.xz
     cd casa-6.5.3-28-py3.8/bin
 
