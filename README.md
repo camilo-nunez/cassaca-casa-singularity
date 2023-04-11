@@ -9,19 +9,19 @@
 |CASA Version|6.5.3|
 
 ## Singularity Commands
-Build the container image with the command:
+Build the container image:
 ```
 singularity build --notest container-casa.sif container-casa.def
 ```
 
 
-Exec a terminal with the builded image with the command:
+Execute a terminal with the builded image:
 ```
 singularity run container-casa.sif
 ```
 
 
-Open a IPython terminal with CASA's libs loaded with the command:
+Open a IPython terminal with CASA's libs loaded:
 ```
 singularity run container-casa.sif
 ```
