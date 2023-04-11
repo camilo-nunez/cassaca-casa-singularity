@@ -16,15 +16,13 @@ Include: dnf
         tzdata util-linux vim-minimal wget which words zlib wget
 
 # Prerequisite OS Libraries https://casadocs.readthedocs.io/en/stable/notebooks/introduction.html#Prerequisite-OS-Libraries
-#    dnf -y install ImageMagick
-#    dnf -y install xorg-x11-server-Xvf
-#    dnf -y install compat-libgfortran-4
-#    dnf -y install libns
+    dnf -y install epel-release
+    dnf -y install ImageMagick*
+    dnf -y install xorg-x11-server-Xvfb
+    dnf -y install compat-libgfortran-48
+    dnf -y install libnsl
     dnf -y install libcanberra-gtk2
-
     dnf -y install python38-devel
-    dnf -y install openmpi-devel
-    dnf -y install mpich-devel
 
 # download and install CASA 6.5.3
     wget http://128.0.16.28:9000/casa-6.5.3-28-py3.8.tar.xz
