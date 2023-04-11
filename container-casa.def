@@ -20,23 +20,24 @@ Include: dnf
 #    dnf -y install xorg-x11-server-Xvf
 #    dnf -y install compat-libgfortran-4
 #    dnf -y install libns
-#    dnf -y install libcanberra-gtk2
+    dnf -y install libcanberra-gtk2
 
     dnf -y install python38-devel
     dnf -y install openmpi-devel
     dnf -y install mpich-devel
 
-
 # download and install CASA 6.5.3
-    wget https://casa.nrao.edu/download/distro/casa/release/rhel/casa-6.5.3-28-py3.8.tar.xz
+    wget http://128.0.16.28:9000/casa-6.5.3-28-py3.8.tar.xz
     tar xf casa-6.5.3-28-py3.8.tar.xz
     cd casa-6.5.3-28-py3.8/bin
     PATH=/casa-6.5.3-28-py3.8/bin:$PATH
 
+    pip3 install pandas
+
 %environment
     PATH=/casa-6.5.3-28-py3.8/bin:$PATH
 
-%runscript
+%runscript 
 # to run a casa script provided as an argument:
 # singularity run <container> <script> <args>
   exec casa -c "$@
